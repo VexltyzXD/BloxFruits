@@ -1,2 +1,0 @@
-# BloxFruits
-Source Sojo Hub
