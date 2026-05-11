@@ -1,4 +1,4 @@
---// VeLix Hub Premium Rainbow UI FULL FIXED
+--// VeLix Hub Premium Rainbow UI FULL AUTO SAVE KEY
 
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
@@ -53,7 +53,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1,0,0,45)
 title.Position = UDim2.new(0,0,0,10)
 title.BackgroundTransparency = 1
-title.Text = "VeLix Hub Premium"
+title.Text = "🌈 VeLix Hub"
 title.Font = Enum.Font.GothamBold
 title.TextSize = 26
 title.TextColor3 = Color3.new(1,1,1)
@@ -74,6 +74,40 @@ box.BorderSizePixel = 0
 box.Parent = frame
 
 Instance.new("UICorner",box).CornerRadius = UDim.new(0,10)
+
+-- MULTI KEY SYSTEM
+local Keys = {
+	"Key1",
+	"Key2",
+	"Key3",
+	"Key4"
+}
+
+-- AUTO SAVE KEY
+local SaveFile = "VeLixKey.txt"
+
+local function SaveKey(key)
+
+	if writefile then
+		writefile(SaveFile,key)
+	end
+end
+
+local function LoadKey()
+
+	if isfile and isfile(SaveFile) then
+		return readfile(SaveFile)
+	end
+
+	return nil
+end
+
+-- LOAD SAVED KEY
+local SavedKey = LoadKey()
+
+if SavedKey then
+	box.Text = SavedKey
+end
 
 -- SOUND SYSTEM
 local Sounds = {
@@ -97,7 +131,7 @@ local function PlaySound(name,volume)
 	Debris:AddItem(sound,5)
 end
 
--- MODERN NOTIFICATION
+-- NOTIFICATION
 local notifFrame = Instance.new("Frame")
 notifFrame.Size = UDim2.new(0,0,0,75)
 notifFrame.Position = UDim2.new(1,-15,0.05,0)
@@ -111,7 +145,6 @@ Instance.new("UICorner",notifFrame).CornerRadius = UDim.new(0,14)
 
 local notifStroke = Instance.new("UIStroke")
 notifStroke.Thickness = 2
-notifStroke.Color = Color3.fromRGB(120,0,255)
 notifStroke.Parent = notifFrame
 
 local notifIcon = Instance.new("TextLabel")
@@ -228,19 +261,19 @@ end
 
 -- BUTTONS
 local login = CreateButton(
-	"Login Hiwd",
+	"Login",
 	UDim2.new(0.5,-145,0.58,0),
 	Color3.fromRGB(120,0,255)
 )
 
 local getkey = CreateButton(
-	"Get Key 24H",
+	"Get Key",
 	UDim2.new(0.5,20,0.58,0),
 	Color3.fromRGB(45,45,45)
 )
 
 local discord = CreateButton(
-	"Discord Velix Hub",
+	"Discord",
 	UDim2.new(0.5,-62,0.76,0),
 	Color3.fromRGB(0,120,255)
 )
@@ -265,9 +298,9 @@ task.spawn(function()
 	local emojis = {
 		"💀",
 		"🔥",
-		"👑",
-		"🎮",
-		"🗿"
+		"😭",
+		"🌈",
+		"👻"
 	}
 
 	while true do
@@ -305,43 +338,6 @@ task.spawn(function()
 	end
 end)
 
--- DRAGGING
-local dragging = false
-local dragStart
-local startPos
-
-frame.InputBegan:Connect(function(input)
-
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-
-		dragging = true
-		dragStart = input.Position
-		startPos = frame.Position
-
-		input.Changed:Connect(function()
-
-			if input.UserInputState == Enum.UserInputState.End then
-				dragging = false
-			end
-		end)
-	end
-end)
-
-UIS.InputChanged:Connect(function(input)
-
-	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-
-		local delta = input.Position - dragStart
-
-		frame.Position = UDim2.new(
-			startPos.X.Scale,
-			startPos.X.Offset + delta.X,
-			startPos.Y.Scale,
-			startPos.Y.Offset + delta.Y
-		)
-	end
-end)
-
 -- OPEN UI
 frame:TweenSize(
 	UDim2.new(0,400,0,280),
@@ -361,15 +357,7 @@ frame:TweenPosition(
 
 PlaySound("Open",1)
 
--- MULTI KEY SYSTEM
-
-local Keys = {
-	"Key1",
-	"Key2",
-	"Key3",
-	"Key4"
-}
-
+-- LOGIN
 local function Login()
 
 	local Correct = false
@@ -384,12 +372,14 @@ local function Login()
 
 	if Correct then
 
+		SaveKey(box.Text)
+
 		PlaySound("Correct",1)
 
 		Notify(
-			"Correct Key Created Hiwd!",
+			"Correct Key!",
 			Color3.fromRGB(0,255,120),
-			"🎮"
+			"✅"
 		)
 
 		wait(1)
@@ -411,7 +401,7 @@ local function Login()
 		PlaySound("Wrong",1)
 
 		Notify(
-			"The Key Doesn't Exist!",
+			"Wrong Key!",
 			Color3.fromRGB(255,60,60),
 			"❌"
 		)
@@ -428,7 +418,6 @@ box.FocusLost:Connect(function(enter)
 	end
 end)
 
--- GET KEY
 getkey.MouseButton1Click:Connect(function()
 
 	PlaySound("Copy",1)
@@ -442,7 +431,6 @@ getkey.MouseButton1Click:Connect(function()
 	)
 end)
 
--- DISCORD
 discord.MouseButton1Click:Connect(function()
 
 	PlaySound("Copy",1)
