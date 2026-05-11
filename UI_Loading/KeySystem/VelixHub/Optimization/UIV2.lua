@@ -292,7 +292,7 @@ local function CreateButton(text,pos,color)
 
 	local btn = Instance.new("TextButton")
 
-	btn.Size = UDim2.new(0,100,0,36)
+	btn.Size = UDim2.new(0,120,0,42)
 	btn.Position = pos
 
 	btn.BackgroundColor3 = Color3.fromRGB(22,22,22)
@@ -302,9 +302,10 @@ local function CreateButton(text,pos,color)
 	btn.TextColor3 = color
 
 	btn.Font = Enum.Font.GothamBold
-	btn.TextSize = 16
-btn.TextScaled = true
-btn.TextStrokeTransparency = 0.5
+	btn.TextSize = 18
+btn.TextScaled = false
+btn.TextWrapped = true
+btn.TextStrokeTransparency = 0.6
 
 	btn.BorderSizePixel = 0
 	btn.Parent = frame
