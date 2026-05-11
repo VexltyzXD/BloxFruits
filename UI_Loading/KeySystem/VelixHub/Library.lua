@@ -361,12 +361,28 @@ frame:TweenPosition(
 
 PlaySound("Open",1)
 
--- KEY
-local key = "password123"
+-- MULTI KEY SYSTEM
+
+local Keys = {
+	"Key1",
+	"Key2",
+	"Key3",
+	"Key4"
+}
 
 local function Login()
 
-	if box.Text == key then
+	local Correct = false
+
+	for _,v in pairs(Keys) do
+
+		if box.Text == v then
+			Correct = true
+			break
+		end
+	end
+
+	if Correct then
 
 		PlaySound("Correct",1)
 
@@ -379,7 +395,10 @@ local function Login()
 		wait(1)
 
 		gui.Enabled = false
-		blur:Destroy()
+
+		if blur then
+			blur:Destroy()
+		end
 
 		loadstring(game:HttpGet(
 			"https://raw.githubusercontent.com/VexltyzXD/BloxFruits/refs/heads/Premium/TrueV1(BloxFruits).lua"
@@ -409,6 +428,7 @@ box.FocusLost:Connect(function(enter)
 	end
 end)
 
+-- GET KEY
 getkey.MouseButton1Click:Connect(function()
 
 	PlaySound("Copy",1)
@@ -422,6 +442,7 @@ getkey.MouseButton1Click:Connect(function()
 	)
 end)
 
+-- DISCORD
 discord.MouseButton1Click:Connect(function()
 
 	PlaySound("Copy",1)
