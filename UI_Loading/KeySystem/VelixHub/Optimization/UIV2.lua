@@ -624,7 +624,7 @@ local function Login()
 		end
 
 		loadstring(game:HttpGet(
-			"https://raw.githubusercontent.com/VexltyzXD/BloxFruits/refs/heads/Premium/TrueV1(BloxFruits).lua"
+			"Link"
 		))()
 
 	else
