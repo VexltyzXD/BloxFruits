@@ -61,7 +61,7 @@ titleLabel.Parent = frame
 
 -- Create the script
 local correctPassword = "password123" -- password here
-local code = "print('Hello, World!')"
+local code = "print('VeLix Hub, Welcome!')"
 
 local function enableGui()
     screenGui.Enabled = true
@@ -74,7 +74,7 @@ local function checkPassword()
         frame:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.In, Enum.EasingStyle.Sine, 0.5, true, function()
             screenGui.Enabled = false
             local func, err = 
-loadstring(game:HttpGet("script-here"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/VexltyzXD/BloxFruits/refs/heads/Premium/TrueV1(BloxFruits).lua"))()
             if func then
                 func()
             else
