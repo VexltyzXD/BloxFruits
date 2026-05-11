@@ -105,7 +105,7 @@ title.Position = UDim2.new(0,0,0,6)
 
 title.BackgroundTransparency = 1
 
-title.Text = "🌈 VeLix Hub"
+title.Text = "VeLix Hub Ultra"
 title.Font = Enum.Font.GothamBold
 
 title.TextSize = IsMobile and 24 or 28
@@ -301,11 +301,11 @@ local function CreateButton(text,pos,color)
 	btn.Text = text
 	btn.TextColor3 = color
 
-	btn.Font = Enum.Font.GothamBold
-	btn.TextSize = 18
+	btn.Font = Enum.Font.Gotham
+	btn.TextSize = 15
 btn.TextScaled = false
 btn.TextWrapped = true
-btn.TextStrokeTransparency = 0.6
+btn.TextStrokeTransparency = 0.85
 
 	btn.BorderSizePixel = 0
 	btn.Parent = frame
@@ -381,25 +381,25 @@ end
 
 -- BUTTONS
 local login = CreateButton(
-	"Login",
+	"Launch",
 	UDim2.new(0.5,-112,0.56,0),
 	Color3.fromRGB(180,0,255)
 )
 
 local getkey = CreateButton(
-	"Get Key",
+	"Get Key Free",
 	UDim2.new(0.5,12,0.56,0),
 	Color3.fromRGB(0,255,255)
 )
 
 local discord = CreateButton(
-	"Discord",
+	"Discord Velix Community",
 	UDim2.new(0.5,-112,0.74,0),
 	Color3.fromRGB(0,170,255)
 )
 
 local infoBtn = CreateButton(
-	"Info",
+	"Status Script",
 	UDim2.new(0.5,12,0.74,0),
 	Color3.fromRGB(255,170,0)
 )
@@ -425,7 +425,7 @@ infoTitle.Size = UDim2.new(1,0,0,40)
 
 infoTitle.BackgroundTransparency = 1
 
-infoTitle.Text = "📋 VeLix Information"
+infoTitle.Text = "VeLix Status"
 
 infoTitle.Font = Enum.Font.GothamBold
 infoTitle.TextSize = 18
@@ -470,7 +470,7 @@ infoText.TextColor3 = Color3.new(1,1,1)
 infoText.Parent = scroll
 
 -- FPS
-local FPS = 60
+local FPS = 240
 
 RunService.RenderStepped:Connect(function(dt)
 	FPS = math.floor(1/dt)
@@ -485,7 +485,7 @@ task.spawn(function()
 		infoText.Text =
 			"👤 Client : "..(identifyexecutor and identifyexecutor() or "Unknown")..
 			"\n\n🎮 Game : "..GameName..
-			"\n\n📦 Version : v6 Premium"..
+			"\n\n📦 Version : v2 Premium"..
 			"\n\n🛠 Update : Technology Neon UI"..
 			"\n\n🔑 Key Status : Active"..
 			"\n\n⏳ Key Expire : Never"..
@@ -521,7 +521,7 @@ end)
 -- PARTICLES
 task.spawn(function()
 
-	local emojis = {"💀","🔥","😭"}
+	local emojis = {"🎮","🗿","🐧"}
 
 	while true do
 
@@ -620,7 +620,7 @@ local function Login()
 		PlaySound("Correct",1)
 
 		Notify(
-			"✅ Correct Key!",
+			"Valid Key | Loading....",
 			Color3.fromRGB(0,255,120)
 		)
 
@@ -643,7 +643,7 @@ local function Login()
 		PlaySound("Wrong",1)
 
 		Notify(
-			"❌ Wrong Key!",
+			"Invalid Key",
 			Color3.fromRGB(255,60,60)
 		)
 	end
@@ -666,7 +666,7 @@ getkey.MouseButton1Click:Connect(function()
 	toclipboard("https://your-key-link.com")
 
 	Notify(
-		"🔑 GetKey Copied!",
+		"Copying Successful",
 		Color3.fromRGB(255,255,0)
 	)
 end)
@@ -678,7 +678,7 @@ discord.MouseButton1Click:Connect(function()
 	toclipboard("https://discord.gg/yourserver")
 
 	Notify(
-		"💬 Discord Copied!",
+		"Copying Successful",
 		Color3.fromRGB(0,170,255)
 	)
 end)
