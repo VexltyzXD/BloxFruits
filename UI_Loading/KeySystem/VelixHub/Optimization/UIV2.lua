@@ -108,7 +108,8 @@ title.BackgroundTransparency = 1
 title.Text = "🌈 VeLix Hub"
 title.Font = Enum.Font.GothamBold
 
-title.TextSize = IsMobile and 20 or 24
+title.TextSize = IsMobile and 24 or 28
+title.TextStrokeTransparency = 0.3
 title.TextColor3 = Color3.new(1,1,1)
 
 title.Parent = frame
@@ -141,8 +142,11 @@ box.PlaceholderColor3 = Color3.fromRGB(160,160,160)
 box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
 
-box.Font = Enum.Font.Gotham
-box.TextSize = 14
+box.Font = Enum.Font.GothamBold
+box.TextSize = 18
+box.TextWrapped = true
+box.TextXAlignment = Enum.TextXAlignment.Center
+box.TextStrokeTransparency = 0.5
 
 box.BorderSizePixel = 0
 box.Parent = frame
@@ -241,7 +245,8 @@ notifText.Position = UDim2.new(0,12,0,0)
 notifText.BackgroundTransparency = 1
 
 notifText.Font = Enum.Font.GothamBold
-notifText.TextSize = 14
+notifText.TextSize = 16
+notifText.TextStrokeTransparency = 0.4
 
 notifText.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -297,7 +302,9 @@ local function CreateButton(text,pos,color)
 	btn.TextColor3 = color
 
 	btn.Font = Enum.Font.GothamBold
-	btn.TextSize = 13
+	btn.TextSize = 16
+btn.TextScaled = true
+btn.TextStrokeTransparency = 0.5
 
 	btn.BorderSizePixel = 0
 	btn.Parent = frame
@@ -454,7 +461,8 @@ infoText.TextXAlignment = Enum.TextXAlignment.Left
 infoText.TextYAlignment = Enum.TextYAlignment.Top
 
 infoText.Font = Enum.Font.Code
-infoText.TextSize = IsMobile and 12 or 13
+infoText.TextSize = IsMobile and 15 or 16
+infoText.TextStrokeTransparency = 0.5
 
 infoText.TextColor3 = Color3.new(1,1,1)
 
