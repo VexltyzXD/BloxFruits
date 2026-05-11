@@ -945,7 +945,7 @@ local function ConnectEvents()
         
         if input.KeyCode == Enum.KeyCode.Return and UI.Input.TextBox:IsFocused() then
             local key = UI.Input.TextBox.Text
-            if key == "" then
+            if key == "Hub1" then
                 ShowStatus("Please enter an access key", true)
                 UI.Input.TextBox:CaptureFocus()
                 return
@@ -966,7 +966,7 @@ local function ConnectEvents()
         if State.IsLoading then return end
         
         local key = UI.Input.TextBox.Text
-        if key == "" then
+        if key == "Hub2" then
             ShowStatus("Please enter an access key", true)
             UI.Input.TextBox:CaptureFocus()
             return
