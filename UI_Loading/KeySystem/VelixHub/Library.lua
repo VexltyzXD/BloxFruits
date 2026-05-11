@@ -53,7 +53,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1,0,0,45)
 title.Position = UDim2.new(0,0,0,10)
 title.BackgroundTransparency = 1
-title.Text = "🌈 VeLix Hub"
+title.Text = "VeLix Hub Premium"
 title.Font = Enum.Font.GothamBold
 title.TextSize = 26
 title.TextColor3 = Color3.new(1,1,1)
@@ -228,19 +228,19 @@ end
 
 -- BUTTONS
 local login = CreateButton(
-	"Login",
+	"Login Hiwd",
 	UDim2.new(0.5,-145,0.58,0),
 	Color3.fromRGB(120,0,255)
 )
 
 local getkey = CreateButton(
-	"Get Key",
+	"Get Key 24H",
 	UDim2.new(0.5,20,0.58,0),
 	Color3.fromRGB(45,45,45)
 )
 
 local discord = CreateButton(
-	"Discord",
+	"Discord Velix Hub",
 	UDim2.new(0.5,-62,0.76,0),
 	Color3.fromRGB(0,120,255)
 )
@@ -265,9 +265,9 @@ task.spawn(function()
 	local emojis = {
 		"💀",
 		"🔥",
-		"😭",
-		"🌈",
-		"👻"
+		"👑",
+		"🎮",
+		"🗿"
 	}
 
 	while true do
@@ -387,9 +387,9 @@ local function Login()
 		PlaySound("Correct",1)
 
 		Notify(
-			"Correct Key!",
+			"Correct Key Created Hiwd!",
 			Color3.fromRGB(0,255,120),
-			"✅"
+			"🎮"
 		)
 
 		wait(1)
@@ -411,7 +411,7 @@ local function Login()
 		PlaySound("Wrong",1)
 
 		Notify(
-			"Wrong Key!",
+			"The Key Doesn't Exist!",
 			Color3.fromRGB(255,60,60),
 			"❌"
 		)
