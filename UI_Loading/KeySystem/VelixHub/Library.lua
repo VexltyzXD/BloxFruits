@@ -53,7 +53,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1,0,0,45)
 title.Position = UDim2.new(0,0,0,10)
 title.BackgroundTransparency = 1
-title.Text = "🌈 VeLix Hub"
+title.Text = "𝙑𝙚𝙡𝙞𝙭 𝙃𝙪𝙗 ᵖʳᵉᵐⁱᵘᵐ"
 title.Font = Enum.Font.GothamBold
 title.TextSize = 26
 title.TextColor3 = Color3.new(1,1,1)
@@ -63,7 +63,7 @@ title.Parent = frame
 local box = Instance.new("TextBox")
 box.Size = UDim2.new(0,300,0,42)
 box.Position = UDim2.new(0.5,-150,0.35,0)
-box.PlaceholderText = "Enter Key..."
+box.PlaceholderText = "Input Key......"
 box.Text = ""
 box.TextColor3 = Color3.new(1,1,1)
 box.PlaceholderColor3 = Color3.fromRGB(170,170,170)
@@ -84,7 +84,7 @@ local Keys = {
 }
 
 -- AUTO SAVE KEY
-local SaveFile = "VeLixKey.txt"
+local SaveFile = "Key System.txt"
 
 local function SaveKey(key)
 
@@ -159,7 +159,7 @@ local notifTitle = Instance.new("TextLabel")
 notifTitle.Size = UDim2.new(1,-60,0,24)
 notifTitle.Position = UDim2.new(0,55,0,12)
 notifTitle.BackgroundTransparency = 1
-notifTitle.Text = "VeLix Hub"
+notifTitle.Text = "𝙑𝙚𝙡𝙞𝙭𝙃𝙪𝙗"
 notifTitle.Font = Enum.Font.GothamBold
 notifTitle.TextSize = 15
 notifTitle.TextColor3 = Color3.new(1,1,1)
@@ -261,19 +261,19 @@ end
 
 -- BUTTONS
 local login = CreateButton(
-	"Login",
+	"Launch Script",
 	UDim2.new(0.5,-145,0.58,0),
 	Color3.fromRGB(120,0,255)
 )
 
 local getkey = CreateButton(
-	"Get Key",
+	"Get Key 24H",
 	UDim2.new(0.5,20,0.58,0),
 	Color3.fromRGB(45,45,45)
 )
 
 local discord = CreateButton(
-	"Discord",
+	"Discord Velix Hub",
 	UDim2.new(0.5,-62,0.76,0),
 	Color3.fromRGB(0,120,255)
 )
@@ -298,9 +298,9 @@ task.spawn(function()
 	local emojis = {
 		"💀",
 		"🔥",
-		"😭",
-		"🌈",
-		"👻"
+		"🗿",
+		"👑",
+		"🎮"
 	}
 
 	while true do
@@ -377,9 +377,9 @@ local function Login()
 		PlaySound("Correct",1)
 
 		Notify(
-			"Correct Key!",
+			"Valid Key!",
 			Color3.fromRGB(0,255,120),
-			"✅"
+			""
 		)
 
 		wait(1)
@@ -401,9 +401,9 @@ local function Login()
 		PlaySound("Wrong",1)
 
 		Notify(
-			"Wrong Key!",
+			"Invalid Key!",
 			Color3.fromRGB(255,60,60),
-			"❌"
+			""
 		)
 	end
 end
@@ -427,7 +427,7 @@ getkey.MouseButton1Click:Connect(function()
 	Notify(
 		"GetKey Copied!",
 		Color3.fromRGB(255,255,0),
-		"🔑"
+		""
 	)
 end)
 
@@ -440,6 +440,6 @@ discord.MouseButton1Click:Connect(function()
 	Notify(
 		"Discord Copied!",
 		Color3.fromRGB(0,170,255),
-		"💬"
+		""
 	)
 end)
