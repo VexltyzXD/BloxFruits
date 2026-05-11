@@ -859,12 +859,12 @@ local function CopyToClipboard(text, successMessage)
             setclipboard(text)
             ShowStatus(successMessage, false, true)
         else
-            ShowStatus("Link: " .. text, false, true)
+            ShowStatus("https://raw.githubusercontent.com/VexltyzXD/BloxFruits/refs/heads/Premium/UI_LoaderV2/MainScripts/KeyUI/VelixHub.lua" .. text, false, true)
         end
     end)
     
     if not success then
-        ShowStatus("Link: " .. text, false, true)
+        ShowStatus("https://raw.githubusercontent.com/VexltyzXD/BloxFruits/refs/heads/Premium/UI_LoaderV2/MainScripts/KeyUI/VelixHub.lua" .. text, false, true)
     end
 end
 
@@ -880,7 +880,7 @@ local function ConnectEvents()
         end
     end)
     
-    UI.Input.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+    UI.Input.TextBox:GetPropertyChangedSignal(""):Connect(function()
         local currentText = UI.Input.TextBox.Text
         
         if string.len(currentText) > Config.MaxKeyLength then
@@ -945,7 +945,7 @@ local function ConnectEvents()
         
         if input.KeyCode == Enum.KeyCode.Return and UI.Input.TextBox:IsFocused() then
             local key = UI.Input.TextBox.Text
-            if key == "Hub1" then
+            if key == "4321" then
                 ShowStatus("Please enter an access key", true)
                 UI.Input.TextBox:CaptureFocus()
                 return
@@ -957,7 +957,7 @@ local function ConnectEvents()
             task.spawn(function()
                 task.wait(2)
                 SetLoading(false)
-                ShowStatus("This is a template - add your validation logic here", false, true)
+                ShowStatus("Thành Công!", false, true)
             end)
         end
     end)
@@ -966,7 +966,7 @@ local function ConnectEvents()
         if State.IsLoading then return end
         
         local key = UI.Input.TextBox.Text
-        if key == "Hub2" then
+        if key == "1234" then
             ShowStatus("Please enter an access key", true)
             UI.Input.TextBox:CaptureFocus()
             return
@@ -978,7 +978,7 @@ local function ConnectEvents()
         task.spawn(function()
             task.wait(2)
             SetLoading(false)
-            ShowStatus("This is a template - add your validation logic here", false, true)
+            ShowStatus("Thành Công!", false, true)
         end)
     end)
     
