@@ -78,7 +78,7 @@ local title = Instance.new("TextLabel")
 title.Size = UDim2.new(1,0,0,40)
 title.Position = UDim2.new(0,0,0,5)
 title.BackgroundTransparency = 1
-title.Text = "🌈 VeLix Hub"
+title.Text = "Velix Hub Premium"
 title.Font = Enum.Font.GothamBold
 title.TextSize = IsMobile and 21 or 25
 title.TextColor3 = Color3.new(1,1,1)
@@ -89,7 +89,7 @@ local box = Instance.new("TextBox")
 box.Size = UDim2.new(0,UIWidth-50,0,40)
 box.Position = UDim2.new(0.5,-((UIWidth-50)/2),0.30,0)
 
-box.PlaceholderText = "Enter Key..."
+box.PlaceholderText = "Input Key......"
 box.Text = ""
 
 box.BackgroundColor3 = Color3.fromRGB(35,35,35)
@@ -105,14 +105,14 @@ Instance.new("UICorner",box).CornerRadius = UDim.new(0,10)
 
 -- MULTI KEYS
 local Keys = {
-	"Key1",
-	"Key2",
-	"Key3",
-	"Key4"
+	"Free1Day1",
+	"Free1Day2",
+	"Free1Day3",
+	"Free1Day4"
 }
 
 -- AUTO SAVE KEY
-local SaveFile = "VeLixKey.txt"
+local SaveFile = "Velix Save Key.txt"
 
 local function SaveKey(key)
 
@@ -272,19 +272,19 @@ end
 
 -- BUTTONS
 local login = CreateButton(
-	"Login",
+	"Launch Script",
 	UDim2.new(0.5,-120,0.57,0),
 	Color3.fromRGB(120,0,255)
 )
 
 local getkey = CreateButton(
-	"Get Key",
+	"Get Key Free 24H",
 	UDim2.new(0.5,10,0.57,0),
 	Color3.fromRGB(50,50,50)
 )
 
 local discord = CreateButton(
-	"Discord",
+	"Discord Velix Community",
 	UDim2.new(0.5,-120,0.76,0),
 	Color3.fromRGB(0,120,255)
 )
@@ -307,7 +307,7 @@ Instance.new("UICorner",infoFrame).CornerRadius = UDim.new(0,16)
 local infoTitle = Instance.new("TextLabel")
 infoTitle.Size = UDim2.new(1,0,0,40)
 infoTitle.BackgroundTransparency = 1
-infoTitle.Text = "📋 VeLix Info"
+infoTitle.Text = "Status"
 infoTitle.Font = Enum.Font.GothamBold
 infoTitle.TextSize = 20
 infoTitle.TextColor3 = Color3.new(1,1,1)
@@ -329,7 +329,7 @@ infoText.RichText = true
 infoText.Parent = infoFrame
 
 local closeInfo = CreateButton(
-	"Close",
+	"Close Tab",
 	UDim2.new(0.5,-55,0.82,0),
 	Color3.fromRGB(255,60,60)
 )
@@ -352,11 +352,11 @@ task.spawn(function()
 
 		infoText.Text =
 			"👤 Client : "..(identifyexecutor and identifyexecutor() or "Unknown")..
-			"\n\n📦 Version : v4 Premium"..
-			"\n\n🛠 Update : Mobile Optimization"..
+			"\n\n📦 Version : V2 Premium"..
+			"\n\n🛠 Update : 11/5/2026"..
 			"\n\n🔑 Key Status : Active"..
 			"\n\n⏳ Key Expire : Never"..
-			"\n\n📢 Admin Notice : Welcome 😭"..
+			"\n\n👑 Admin : Vexltyz"..
 			"\n\n⚡ FPS : "..FPS..
 			"\n\n🕒 Vietnam Time : "..TimeVN
 
@@ -396,9 +396,9 @@ end)
 task.spawn(function()
 
 	local emojis = {
-		"💀",
-		"🔥",
-		"😭"
+		"🤣",
+		"🐧",
+		"🗿"
 	}
 
 	while true do
@@ -498,7 +498,7 @@ local function Login()
 		PlaySound("Correct",1)
 
 		Notify(
-			"✅ Correct Key!",
+			"Valid Key | Loading...",
 			Color3.fromRGB(0,255,120)
 		)
 
@@ -521,7 +521,7 @@ local function Login()
 		PlaySound("Wrong",1)
 
 		Notify(
-			"❌ Wrong Key!",
+			"Invalid Key!",
 			Color3.fromRGB(255,60,60)
 		)
 	end
@@ -544,7 +544,7 @@ getkey.MouseButton1Click:Connect(function()
 	toclipboard("https://your-key-link.com")
 
 	Notify(
-		"🔑 GetKey Copied!",
+		"Copying Successful!",
 		Color3.fromRGB(255,255,0)
 	)
 end)
@@ -556,7 +556,7 @@ discord.MouseButton1Click:Connect(function()
 	toclipboard("https://discord.gg/yourserver")
 
 	Notify(
-		"💬 Discord Copied!",
+		"Copying Successful",
 		Color3.fromRGB(0,170,255)
 	)
 end)
